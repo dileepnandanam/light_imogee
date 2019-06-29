@@ -1,7 +1,7 @@
 module LightImogee
   module ActionView
     def with_imogee(content)
-      LightImogee::Data.get_imogee_map.each{|symbol,name| content.gsub!(symbol, LightImogee::Data.get_imogee_for_symbol(symbol))}
+      LightImogee::Data.get_imogee_map.each{|symbol,name| content.gsub!(/[^<]*(#{Regexp.escape(symbol)})[^>]*/, LightImogee::Data.get_imogee_for_symbol(symbol))}
       content.html_safe
     end
     ::ActionView::Base.send :include, self
