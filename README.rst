@@ -1,5 +1,3 @@
-Light Scroll
-
 Light Imogee is a gem for Managing Imogees
 To get started:
 
